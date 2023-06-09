@@ -1,6 +1,5 @@
 package faheem.microservices.car.factory.controller;
 
-import com.netflix.discovery.converters.Auto;
 import faheem.microservices.car.factory.entity.Car;
 import faheem.microservices.car.factory.service.CarService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,12 +15,12 @@ public class CarController {
     CarService carService;
 
     @PostMapping("/addCar")
-    public Car addCar(@RequestBody Car car){
+    public Car addCar(@RequestBody Car car) {
         return carService.addCar(car);
     }
 
     @GetMapping("/getCar")
-    public List<Car> getAllCars(){
+    public List<Car> getAllCars() {
         return carService.getAllCars();
     }
 }

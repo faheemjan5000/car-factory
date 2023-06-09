@@ -16,7 +16,8 @@ import javax.persistence.Id;
 @Entity
 public class Car {
 
-    @Id@GeneratedValue(strategy = GenerationType.AUTO)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer carId;
     private String carName;
     private String carModel;
