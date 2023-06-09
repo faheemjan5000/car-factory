@@ -19,8 +19,13 @@ public class CarController {
         return carService.addCar(car);
     }
 
-    @GetMapping("/getCar")
+    @GetMapping("/cars")
     public List<Car> getAllCars() {
         return carService.getAllCars();
+    }
+
+    @GetMapping("/getCar/{id}")
+    public Car getCar(@PathVariable(name="id") Integer carId){
+        return carService.getCarById(carId);
     }
 }

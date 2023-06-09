@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.NoSuchElementException;
+import java.util.Optional;
 
 @Service
 public class CarService {
@@ -19,5 +21,15 @@ public class CarService {
 
     public List<Car> getAllCars() {
         return carRepository.findAll();
+    }
+
+    public Car getCarById(Integer carId){
+         Optional<Car> optionalCar =carRepository.findById(carId);
+         if(optionalCar.isPresent()){
+             return optionalCar.get();
+         }
+         else {
+             throw new NoSuchElementException("car with this id not found!");
+         }
     }
 }
