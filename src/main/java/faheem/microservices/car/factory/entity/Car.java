@@ -17,7 +17,7 @@ import javax.persistence.Id;
 public class Car {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)//for cloud it should be IDENTITY,for local AUTO
     private Integer carId;
     private String carName;
     private String carModel;
